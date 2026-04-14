@@ -1,0 +1,7 @@
+While meeting with the problem of network, remember to check the cable first!
+We can use "ping 192.168.0.23", which refers to the IP of my computer, to see whether the transmission works well. If there is a large percent of packet loss, it may stand for disconnection of your cable.
+Then, we can type "ip add" to check what the name our network card is.
+We can use "cat /sys/class/net/enp2s0/carrier" to check whether the cable connects well! If the output is 0, that means the cable may not connect to your computer.
+If the output is 1 and you still can't link to the Internet, we can try to check the state of our network card, type "ip link show | grep "state "DOWN" to check whether your network card is actived. If the name of your network card appears in the output, you should active your network card.
+
+Remember that in bash, "0" represents "true" and "1" represents "false"! In bash, "0" stands for "no problem", which refers to right while "1" refers to "one problem", which refers to false! While writing if condition, we should remember this deeply! Also, while writing functions, we should also notice that we should return "0" for the case we think is right! And "1" for the case wrong! 
